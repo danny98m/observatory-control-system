@@ -66,3 +66,7 @@ wheels/
 *.egg 
 *.manifest 
 *.spec 
+
+# Ignore Local Settings #
+##########################
+observatory_control_project/local_settings.py
