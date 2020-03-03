@@ -70,3 +70,12 @@ wheels/
 # Ignore Local Settings #
 ##########################
 observatory_control_project/local_settings.py
+
+# Ignore VSCode stuff #
+#########################
+.vscode
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
