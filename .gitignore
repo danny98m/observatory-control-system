@@ -34,3 +34,6 @@ Thumbs.db
 ##################
 *~
 *.pyc
+bin/
+lib/
+pyvenv.cfg
