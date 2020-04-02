@@ -1,6 +1,7 @@
 import os
 import subprocess
 from writeToLog import *
+from sbigUtil import *
 
 # a function to list the files in 
 # the current directory and  
@@ -43,6 +44,21 @@ def list_command(args = '-l'):
     # return res 
 
 def main():
-    list_command('-al')
+    # list_command('-al')
+    resetLog()
+    sbigFind()
+    sbigInfoDriver()
+    sbigInfoCcd()
+    sbigInfoCcd("tracking")
+    sbigInfoCcd("imaging")
+    sbigInfoCfw()
+    sbigInfoCooler()
+    sbigInfoFov("tracking", "med", "focal-length")
+    sbigInfoFov("","","focal-length")
+    sbigInfoFov("imaging")
+    sbigCooler("on",-31.2)
+    sbigCooler("off")
+    sbigCfwQuery()
+    sbigCfwGoTo(5)
 
 main()
