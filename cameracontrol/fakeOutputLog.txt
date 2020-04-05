@@ -12,3 +12,8 @@ sbig-cooler on -31.2
 sbig-cooler off
 sbig-cfw query
 sbig-cfw goto 5
+sbig-focus
+sbig-focus -t 5
+sbig-focus -t 5 -r hi
+sbig-snap
+sbig-snap -t 20 -n 10 -r hi

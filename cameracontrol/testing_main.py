@@ -60,5 +60,10 @@ def main():
     sbigCooler("off")
     sbigCfwQuery()
     sbigCfwGoTo(5)
+    sbigFocus()
+    sbigFocus(["-t 5"])
+    sbigFocus(["-t 5", "-r hi"])
+    sbigSnap()
+    sbigSnap(["-t 20", "-n 10","-r hi"])
 
 main()

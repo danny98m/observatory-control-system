@@ -103,7 +103,7 @@ def sbigInfoFov(option1="",option2="", option3=""):
 
 def sbigCooler(toggle, temp=""):
 # Description  : operators the cooling fans in the camera allows to set temperature
-# Precondition : camera is on an connected, toggle is given "on" | "off", if set to "on" temp must contain a valid floating point value
+# Precondition : camera is on and connected, toggle is given "on" | "off", if set to "on" temp must contain a valid floating point value
 # Postcondition: camera is set to the appropriate state
     if((toggle=="on") and (temp != "")):
         writeToLog("sbig-cooler on "+str(temp))
@@ -130,3 +130,46 @@ def sbigCfwGoTo(filterN):
 
 
 #still need sbig-focus and sbig-snap THE UGLY ONES
+def sbigFocus(optionsArray=[]):
+# Description  : puts the camera in focusing mode. This is a continuous stream of photos set at a certain exposure time
+# Precondition : camera is on and connected [the desired filter in which you want to focus the telescope should be selected]
+#              : optionsArray is an array that contains none,some, or all the options as follows with their associated values
+# Postcondition: The camera will continue to take photos as the set duration
+# Usage: sbig-focus [OPTIONS]
+#   -t, --exposure-time SEC exposure time in seconds (default 1.0)
+#   -C, --ccd-chip CHIP     use imaging, tracking, or ext-tracking
+#   -r, --resolution RES    select hi, med, or lo resolution
+#   -p, --partial N         take centered partial frame (0 < N <= 1.0)
+    cmd = "sbig-focus"
+    if (len(optionsArray)<=4):
+        for option in optionsArray:
+            cmd+= " "+option
+        writeToLog(cmd)
+    else:
+        writeToLog("ERROR too many options -sbigFocus")
+
+def sbigSnap(optionsArray=[]):
+# Description  : takes a picture
+# Precondition : camera is on and connected [the desired filter in which you want to focus the telescope should be selected]
+#              : optionsArray is an array that contains none,some, or all the toptions as follows with thier associated values
+# Postcondition: the camera will take a picture as specified by the options
+# Usage: sbig-snap [OPTIONS]
+#   -t, --exposure-time SEC    exposure time in seconds (default 1.0)
+#   -d, --image-directory DIR  where to put images (default /tmp)
+#   -C, --ccd-chip CHIP        use imaging, tracking, or ext-tracking
+#   -r, --resolution RES       select hi, med, or lo resolution
+#   -n, --count N              take N exposures
+#   -D, --time-delta N         increase exposure time by N on each exposure
+#   -m, --message string       add COMMENT to FITS file
+#   -O, --object NAME          name of object being observed (e.g. M33)
+#   -f, --force                press on even if FITS header will be incomplete
+#   -p, --partial N            take centered partial frame (0 < N <= 1.0)
+#   -T, --image-type TYPE      take df, lf, or auto (default auto)
+#   -c, --no-cooler            allow TE to be disabled/
+    cmd = "sbig-snap"
+    if(len(optionsArray)<=12):
+        for option in optionsArray:
+            cmd+= " "+option
+        writeToLog(cmd)
+    else:
+        writeToLog("ERROR too many options -sbigSnap")
