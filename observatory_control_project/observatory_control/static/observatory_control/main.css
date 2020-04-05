@@ -4,10 +4,6 @@
   padding: 0;
 }
 
-.container {
-  margin: 1rem;
-}
-
 body {
   height: 100vh;
   background: #24252a;
@@ -25,21 +21,11 @@ label {
   font-size: 2em;
 }
 
-.label-danger {
-  color: red;
-}
-
-.login-container {
-  display: flex;
-  flex-wrap: wrap;
-  text-align: center;
-  justify-content: center;
-}
-
 li {
   text-decoration: none;
   list-style-type: none;
 }
+
 header {
   background-color: #28292c;
   margin-bottom: 5rem;
@@ -52,12 +38,6 @@ header {
 a {
   color: #edf0f1;
   text-decoration: none;
-}
-
-.form-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 }
 
 input[type=text], select {
@@ -98,4 +78,25 @@ button {
 
 button:hover {
   background-color: #4b4357;
+}
+
+.container {
+  margin: 1rem;
+}
+
+.label-danger {
+  color: red;
+}
+
+.login-container {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: center;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
