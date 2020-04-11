@@ -1,0 +1,33 @@
+{% extends 'observatory_control/base.html' %}
+{% block title %}Login{% endblock %}
+
+{% block content %}
+    <div>
+        <div class="login-container">
+            <form class="form-container" method="post" 
+                  action="{% url 'login' %}">
+                {% csrf_token %}
+                    <div class="separator">
+                        <label for="username">Username:</label>
+                        <input class="submission-field" type="text" id="username" name="username" placeholder="Your Username">
+                    </div>
+                    <div class="separator">
+                        <label for="password">Password:</label>
+                        <input class="submission-field" type="password" id="password" name="password" placeholder="Your Password">
+                    </div>
+                    
+                    {% if form.errors %}
+                    <div class="separator">
+                        <p class="label-danger">
+                            Incorrect Username and Password.
+                        </p>
+                    </div>
+                        
+                    {% endif %}
+                    <div>
+                      <button class="button" type="submit">Login</button>
+                    </div>
+            </form>
+        </div>
+    </div>
+{% endblock content %}
