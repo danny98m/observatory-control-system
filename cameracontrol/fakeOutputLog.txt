@@ -1,0 +1,19 @@
+sbig find
+sbig-info driver
+sbig-info ccd
+sbig-info ccd tracking
+sbig-info ccd imaging
+sbig-info cfw
+sbig-info cooler
+sbig-info fov tracking med focal-length
+sbig-info fov focal-length
+sbig-info fov imaging
+sbig-cooler on -31.2
+sbig-cooler off
+sbig-cfw query
+sbig-cfw goto 5
+sbig-focus
+sbig-focus -t 5
+sbig-focus -t 5 -r hi
+sbig-snap
+sbig-snap -t 20 -n 10 -r hi
