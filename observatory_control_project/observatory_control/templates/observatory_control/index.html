@@ -1,6 +1,45 @@
 {% extends "observatory_control/base.html" %}
 {% block content %}
-    <div class="container">
-        <h1>Yo what up</h1>
+    <div id="manual-controls">
+        <div class="wrapper">
+            <div class="manual-controls">
+
+                <button class="accordion">Dome Control</button>
+                <div class="accordion-content" id="dome">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla nostrum esse minus quam est minima, dicta sunt exercitationem dolorem sapiente consectetur voluptate officia hic pariatur totam porro, quod optio possimus!
+                </div>
+                
+                <button class="accordion">Teslescope Control</button>
+                <div class="accordion-content" id="telescope">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita vero ad fugit voluptate minima illum reprehenderit ipsum, mollitia numquam vel facilis quibusdam corrupti, omnis magni. Tempora provident voluptate assumenda iusto?
+                </div>
+                
+            </div>
+
+            <div class="main-controls">
+                <input class="radio" id="skymap" name="group" type="radio" checked>
+                <input class="radio" id="camera" name="group" type="radio">
+                <div class="tabs">
+                    <label class="tab" id="skymap-tab" for="skymap">Starmap</label>
+                    <label class="tab" id="camera-tab" for="camera">Camera</label>
+                </div>
+                <div class="contents">
+                    <div class="content" id="skymap-content">
+                        <div id="starmap"></div>
+                    </div>
+                    <div class="starmap-controls">
+                        <div id="current-view">
+                            <div id="searchbar"></div>
+                            <div id="control-panel"></div>
+                        </div>
+                        <div id="starmap-console"></div>
+                    </div>
+                    <div class="content" id="camera-content">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae ex voluptate corporis placeat assumenda nam recusandae quis id accusantium eveniet.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+    
 {% endblock content %}

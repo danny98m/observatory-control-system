@@ -6,7 +6,7 @@
 
 body {
   height: 100vh;
-  background: #24252a;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.47) 0%, rgba(255, 255, 255, 0) 100%), #121212;
   color: #edf0f1;
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -27,12 +27,12 @@ li {
 }
 
 header {
-  background-color: #28292c;
-  margin-bottom: 5rem;
+  background-color: rgba(0, 53, 115, 0.5);;
+  margin-bottom: 2.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 0.8rem 5rem;
 }
 
 a {
@@ -60,14 +60,15 @@ input[type=password], select {
 
 button {
   display: inline-block;
-  background-color: #4b4357c0;
-  border-radius: 10px;
-  border: 4px solid #cccccc;
+  background: rgba(33, 33, 33, 0.7);
+  border: 1px solid #4A4A4A;
+  box-sizing: border-box;
+  border-radius: 12px 12px 0px 0px;
   color: #eeeeee;
-  text-align: center;
-  font-size: 1.5em;
+  /* text-align: center; */
+  font-size: 1em;
   padding: 20px;
-  width: 200px;
+  /* width: 200px; */
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
   -o-transition: all 0.5s;
@@ -82,6 +83,9 @@ button:hover {
 
 .container {
   margin: 1rem;
+  margin-right: auto;
+  margin-left: auto;
+  width: 1200px;
 }
 
 .label-danger {
@@ -99,4 +103,170 @@ button:hover {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+/* ------- manual control sidebar css -------- */
+
+.wrapper  {
+  display: grid;
+  grid-template-columns: 20% 85%;
+  height: 80vh;
+  grid-column-gap: 1em;
+  align-self: center;
+}
+
+.wrapper > div{
+  background: none;
+}
+
+.accordion > div{
+  display: grid;
+  grid-row-gap: 1em;
+}
+
+button.accordion {
+  width: 100%;
+  border-radius: 12 12 0 0px;
+  outline: none;
+  padding: 10px;
+  margin: 0px;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.2s linear;
+}
+
+button.accordion:hover {
+  background-color: rgb(63, 63, 63);
+}
+
+button.accordion::before {
+  content: '\f111';
+  font-family: "fontawesome";
+  font-size: 1em;
+  float: left;
+  color: red;
+  padding-right: 10px;
+}
+
+button.accordion.is-open::after{
+  display: grid;
+}
+
+.accordion-content {
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-bottom: 1em;
+  max-height: 0;
+  background: #4A4A4A;
+  border: 0px solid #4A4A4A;
+  box-sizing: border-box;
+  border-radius: 0px 0px 12px 12px;
+  overflow: hidden;
+  transition: max-height 0.2s ease-in-out;
+}
+
+/* ------- main control navbar css -------- */
+
+label.tab {
+  font-size: 1em;
+}
+
+.tab{
+  background: rgba(33, 33, 33, 0.7);
+  border: 1px solid #4A4A4A;
+  box-sizing: border-box;
+  border-radius: 12px 12px 0px 0px;
+
+  cursor: pointer;
+  padding: 10px 20px;
+  display: inline-block;
+  color: #fff;
+}
+.contents{
+  height: 80%;
+  background: #212121;
+  border: 1px solid #4A4A4A;
+  box-sizing: border-box;
+  border-radius: 0px 12px 12px 12px;
+  overflow: hidden;
+  padding: 20px;  
+}
+.content{
+  display: none;
+}
+
+.radio{
+  display: none;
+}
+#skymap:checked ~ .contents #skymap-content,
+#camera:checked ~ .contents #camera-content{
+  display: block
+}
+#skymap:checked ~ .tabs #skymap-tab,
+#camera:checked ~ .tabs #camera-tab{
+  background: #4A4A4A;
+  color: #ffffff;
+}
+
+#skymap-content {
+  border: 2px solid #4A4A4A;
+  border-radius: 12px;
+}
+
+#starmap {
+  width: 100%;
+  height: 400px;
+  border-radius: 12px;
+}
+
+#starmap-inner {
+  border-radius: 12px;
+}
+
+/* ------- starmap control css -------- */
+
+.starmap-controls {
+  padding-top: 1em;
+  padding-bottom: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  display: grid;
+  grid-template-columns: 30% 60%;
+  grid-column-gap: 1em;
+  align-self: center;
+}
+
+#current-view {
+  width: 100%;
+  display: grid;
+  grid-template-rows: 3% 85%;
+  grid-row-gap: 1em;
+  /* flex-wrap: wrap; */
+  /* align-self: left; */
+  /* justify-content: space-between; */
+}
+
+#searchbar {
+  background: #4A4A4A;
+  box-sizing: border-box;
+  border-radius: 12px;
+  height: 20px;
+}
+
+#control-panel {
+  background: #4A4A4A;
+  border: 1px solid #CBCBCB;
+  box-sizing: border-box;
+  border-radius: 12px;
+  /* height: 20%; */
+}
+
+#starmap-console {
+  background: #4A4A4A;
+  border: 1px solid #CBCBCB;
+  box-sizing: border-box;
+  border-radius: 12px;
+  height: 30%;
 }
