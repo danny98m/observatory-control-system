@@ -1,6 +1,95 @@
 {% extends "observatory_control/base.html" %}
 {% block content %}
-    <div class="container">
-        <h1>Yo what up</h1>
+    <div id="manual-controls">
+        <div class="wrapper">
+            <div class="manual-controls">
+
+                <button class="accordion is-open">Dome Control</button>
+                <div class="accordion-content" id="dome">
+                    <div class="serial-connection">
+                        <label for="dome-connection-port" class="enabled">Serial Port</label>
+                        <select id="connection-ports" data-bind="options: portOptions, optionsCaption: 'AUTO', value: selectedPort, css: {disabled: !isErrorOrClosed()}, enable: isErrorOrClosed()" class="enabled">
+                            <option value="">AUTO</option>
+                        </select>
+                        <button class="connect">Connect</button>
+                    </div>
+                    <div id="dome-opener">
+                        <img id="dome-icon" src="static/observatory_control/icons/dome.svg" alt="observatory dome">                        
+                        <div id="selectors">
+                            <div class="opener">
+                                <a>Both Sides</a>
+                                <div class="switch-container">
+                                    <label class="switch">
+                                        <input class='switch-input' id='both-sides' type="checkbox">
+                                        <div class="slider round"></div>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="opener">
+                                <a>Right Side</a>
+                                <div class="switch-container">
+                                    <label class="switch">
+                                        <input class='switch-input' id='right-side' type="checkbox">
+                                        <div class="slider round"></div>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="opener">
+                                <a>Left Side</a>
+                                <div class="switch-container">
+                                    <label class="switch">
+                                        <input class='switch-input' id='left-side' type="checkbox">
+                                        <div class="slider round"></div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="accordion is-open">Teslescope Control</button>
+                <div class="accordion-content" id="telescope">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita vero ad fugit voluptate minima illum reprehenderit ipsum, mollitia numquam vel facilis quibusdam corrupti, omnis magni. Tempora provident voluptate assumenda iusto?
+                </div>
+                
+            </div>
+
+            <div class="main-controls">
+                <input class="radio" id="skymap" name="group" type="radio" checked>
+                <input class="radio" id="camera" name="group" type="radio">
+                <div class="tabs">
+                    <label class="tab" id="skymap-tab" for="skymap">Starmap</label>
+                    <label class="tab" id="camera-tab" for="camera">Camera</label>
+                </div>
+                <div class="contents">
+                    <div class="content" id="skymap-content">
+                        <div id="starmap-border">
+                            <div id="starmap"></div>
+                        </div>
+                        <div id="starmap-controls">
+                            <div id="current-view">
+                                <div class="searchbar">
+                                    <div id="search-icon">
+                                        <i class="material-icons md-18">search</i>
+                                    </div>
+                                    <div id="search-field box">
+                                        <!-- <input id="sky-object box" type="text"> -->
+                                    </div>
+                                    <div id="menu">
+                                        <i class="material-icons md-18">menu</i>
+                                    </div>
+                                </div>
+                                <div id="control-panel"></div>
+                            </div>
+                            <div class="console" id="starmap-console"></div>
+                        </div>
+                    </div>
+                    <div class="content" id="camera-content">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae mollitia aliquid illo quasi, dignissimos debitis cumque, laboriosam natus optio, non ab aliquam voluptas. Quod itaque repudiandae id consequuntur excepturi dolore?
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+    
 {% endblock content %}
