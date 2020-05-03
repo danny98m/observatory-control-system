@@ -49,13 +49,100 @@
                 
                 <button class="accordion is-open">Teslescope Control</button>
                 <div class="accordion-content" id="telescope">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita vero ad fugit voluptate minima illum reprehenderit ipsum, mollitia numquam vel facilis quibusdam corrupti, omnis magni. Tempora provident voluptate assumenda iusto?
+                    <div class="serial-connection">
+                        <label for="dome-connection-port" class="enabled">Serial Port</label>
+                        <div>
+                            <select id="connection-ports" data-bind="options: portOptions, optionsCaption: 'AUTO', value: selectedPort, css: {disabled: !isErrorOrClosed()}, enable: isErrorOrClosed()" class="enabled">
+                                <option value="">AUTO</option>
+                            </select>
+                        </div>
+                        <button class="connect">Connect</button>
+                    </div>
+                    <div>
+                        <div id="paddle-controls">
+                            <div></div>
+                            <button class="paddleUp">
+                                <i class="material-icons md-36">keyboard_arrow_up</i>
+                            </button>
+                            <div></div>
+                            <button class="paddleLeft">
+                                <i class="material-icons md-36">keyboard_arrow_left</i>
+                            </button>
+                            <div class="paddleSpeed">
+                                <select class="telescope-speed">
+                                    <option value=1>1</option>
+                                    <option value=2>2</option>
+                                    <option value=3>3</option>
+                                    <option value=4>4</option>
+                                    <option value=5>5</option>
+                                    <option value=6>6</option>
+                                    <option value=7>7</option>
+                                    <option value=8>8</option>
+                                    <option value=9>9</option>
+                                </select>
+                            </div>
+                            <button class="paddleRight">
+                                <i class="material-icons md-36">keyboard_arrow_right</i>
+                            </button>
+                            <div></div>
+                            <button class="paddleDown">
+                                <i class="material-icons md-36">keyboard_arrow_down</i>
+                            </button>
+                            <div></div>
+                        </div>
+                        <div class="coords" id="coords-telescope-control">
+                            <div class="coord" id="RA">
+                                <pre>RA:  23°57'26"</pre>
+                            </div>
+                            <div class="coord" id="DEC">
+                                <pre>DEC: 41°22"22'</pre>
+                            </div>
+                            <div>
+                                <input type="radio" id="safe-mode" name="mode" value="safe" checked>
+                                <label for="safe-mode" class="coord telescope-mode">Safe mode</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="scope-active" name="mode" value="active">
+                                <label for="scope-active" class="coord telescope-mode">Scope active</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="extra-controls">
+                        <a>Pier Flip: </a>
+                    </div>
+                </div>
+
+                <button class="accordion is-open">Console</button>
+                <div class="accordion-content" id="console-tab">
+                    <div class="console">
+                        <pre class="console-output"> >Hello world
+Lorem ipsum dolor sit amet.
+Lorem, ipsum dolor.
+Lorem ipsum dolor sit.
+Lorem ipsum dolor sit.
+Lorem, ipsum dolor.
+Lorem ipsum dolor sit.
+Lorem ipsum dolor sit.
+Lorem, ipsum dolor.
+Lorem ipsum dolor sit.
+Lorem ipsum dolor sit.
+Lorem, ipsum dolor.
+Lorem ipsum dolor sit.
+Lorem ipsum dolor sit.
+Lorem, ipsum dolor.
+Lorem ipsum dolor sit.
+Lorem ipsum dolor sit.
+Lorem, ipsum dolor.
+Lorem ipsum dolor sit.
+Lorem ipsum dolor sit.
+                        </pre>
+                    </div>
                 </div>
                 
             </div>
 
             <div class="main-controls">
-                <input class="radio" id="skymap" name="group" type="radio" checked>
+                <input class="radio" id="skymap" name="group" type="radio">
                 <input class="radio" id="camera" name="group" type="radio">
                 <div class="tabs">
                     <label class="tab" id="skymap-tab" for="skymap">Starmap</label>
